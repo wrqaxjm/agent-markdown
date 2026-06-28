@@ -19,6 +19,13 @@ import sys, os, re, json, shutil, difflib, argparse, glob as glob_mod
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+# force UTF-8 on Windows (fixes GBK printing of emoji / Chinese)
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 LOG_DIR = ".mdtool"
 LOCK_DIR = ".mdlock"
 
