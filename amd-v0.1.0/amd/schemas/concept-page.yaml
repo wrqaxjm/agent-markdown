@@ -1,0 +1,19 @@
+$id: concept-page
+$version: 1
+$description: "A concept / definition page."
+
+require_frontmatter: true
+require_schema_field: true
+
+required_fields:
+  - tags
+
+field_types:
+  tags: array<string>
+
+required_sections:
+  - §1
+
+section_rules:
+  §1:
+    require_class: definition

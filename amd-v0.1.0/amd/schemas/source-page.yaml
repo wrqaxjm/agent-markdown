@@ -1,0 +1,37 @@
+$id: source-page
+$version: 1
+$description: "A research paper source page."
+
+require_frontmatter: true
+require_schema_field: true
+
+required_fields:
+  - arxiv_id
+  - year
+  - authors
+
+field_types:
+  arxiv_id: string
+  year: integer
+  authors: array<string>
+  tags: array<string>
+
+required_sections:
+  - §1
+  - §4
+
+section_rules:
+  §1:
+    max_blocks: 10
+    require_class: abstract
+  §3:
+    min_blocks: 1
+  §5:
+    require_actor_meta: true
+
+backlink_rules:
+  min_count: 1
+
+require_blocks:
+  - type: figure
+    min_count: 1

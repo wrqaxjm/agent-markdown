@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amd"
+version = "0.1.0"
+description = "Agent Markdown Document — a markdown format and toolset for AI agents"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "markdown-it-py>=3.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+amd = "amd.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["amd*"]
